@@ -1,0 +1,28 @@
+id: ai-radio
+base_agent: antigravity-preview-05-2026
+description: "Transforms a text source into a polished, simulated radio show with hosts, callers, and background music."
+tools:
+  - type: google_search
+  - type: code_execution
+  - type: url_context
+environment:
+  type: "remote"
+  sources: []
+  network:
+    allowlist:
+      - domain: "hacker-news.firebaseio.com"
+      - domain: "news.ycombinator.com"
+      - domain: "api.github.com"
+      - domain: "github.com"
+      - domain: "raw.githubusercontent.com"      
+      - domain: "pypi.org"
+      - domain: "files.pythonhosted.org"
+      - domain: "arxiv.org"
+      - domain: "en.wikipedia.org"
+examples:
+  - title: "Daily Hacker Bites"
+    prompt: "Generate a 3-minute radio show called Daily Hacker Bites based on top Hacker News stories."
+  - title: "GitHub Roundtable for AlphaFold 3"
+    prompt: "Generate a 3-minute radio with a roundtable concept, educating listeners about https://github.com/google-deepmind/alphafold3."
+  - title: "Sports Tournament Debate"
+    prompt: "Generate a 3-minute lively sports debate about preparations for a major upcoming tournament."

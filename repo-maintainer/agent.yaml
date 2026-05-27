@@ -1,0 +1,19 @@
+id: repo-maintainer
+base_agent: antigravity-preview-05-2026
+description: "Analyzes your codebase to identify issues, answer questions, and generate bug-fixing patches."
+tools:
+  - type: code_execution
+environment:
+  type: "remote"
+  sources: []
+  network:
+    allowlist:     
+      - domain: "github.com"
+      - domain: "api.github.com"
+examples:
+  - title: "Repo Overview"
+    prompt: "Clone https://github.com/yoshihiro999/gmat-dummy-target-20260527 and give me an overview of the repository structure and README."
+  - title: "Fix Critical Issue"
+    prompt: "Clone https://github.com/yoshihiro999/gmat-dummy-target-20260527, find the most critical open issue and generate a .patch file to fix it."
+  - title: "Top Issues"
+    prompt: "What are the top open issues for https://github.com/yoshihiro999/gmat-dummy-target-20260527?"

@@ -1,0 +1,24 @@
+id: data-analyst
+base_agent: antigravity-preview-05-2026
+description: "Delivers interactive business intelligence and data analysis using the Microsoft Northwind dataset."
+tools:
+  - type: code_execution
+  - type: google_search
+environment:
+  type: "remote"
+  sources:
+    - type: "gcs"
+      source: "gs://generativeai-downloads/managed-agents-templates/data-analyst"
+      target: ".agents/workspace"
+  network:  
+    allowlist:
+      - domain: "github.com"
+      - domain: "pypi.org"
+      - domain: "files.pythonhosted.org"
+examples:
+  - title: "Biggest Customer"
+    prompt: "Who is my biggest customer?"
+  - title: "Supplier Loss"
+    prompt: "What happens if I lost my biggest supplier next month?"
+  - title: "Revenue Forecast"
+    prompt: "Predict next month's revenue."

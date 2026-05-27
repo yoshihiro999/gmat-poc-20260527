@@ -1,0 +1,20 @@
+id: customer-support
+base_agent: antigravity-preview-05-2026
+description: "Scans a website to build a custom knowledge base and answer support questions using that content."
+tools:
+  - type: code_execution
+  - type: google_search
+environment:
+  type: "remote"
+  sources: []
+  network:
+    allowlist:
+      - domain: "ai.google.dev"
+      - domain: "fastapi.tiangolo.com"
+examples:
+  - title: "Gemini API Support Bot"
+    prompt: "Build Gemini API customer support bot grounded with ai.google.dev/gemini-api/docs."
+  - title: "FastAPI Support Bot"
+    prompt: "Build FastAPI customer support bot grounded with fastapi.tiangolo.com."
+  - title: "Gemma Support Bot"
+    prompt: "Build Gemma customer support bot grounded with https://ai.google.dev/gemma/docs."

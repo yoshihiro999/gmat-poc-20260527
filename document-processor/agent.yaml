@@ -1,0 +1,27 @@
+id: reconciliation-agent
+base_agent: antigravity-preview-05-2026
+description: "Reconciles expenses and invoices, verifies vendors, and creates interactive HTML slideshow reports."
+tools:
+  - type: google_search
+  - type: code_execution
+  - type: url_context
+environment:
+  type: "remote"
+  sources:
+    - type: "gcs"
+      source: "gs://generativeai-downloads/managed-agents-templates/document-processor/"
+      target: ".agents/workspace"
+  network:
+    allowlist:
+      - domain: "www.wikidata.org"    
+      - domain: "fonts.googleapis.com"
+      - domain: "fonts.gstatic.com"      
+      - domain: "pypi.org"
+      - domain: "files.pythonhosted.org"
+examples:
+  - title: "Reconcile Expenses"
+    prompt: "Reconcile expenses in expenses.csv with the invoices and flag all discrepancies."
+  - title: "Verify Vendors"
+    prompt: "Are the vendors listed in our expenses real, legitimate businesses?"
+  - title: "Full Analysis Pipeline"
+    prompt: "Run a full analysis: reconcile all expenses and create a vendor cost slideshow."
